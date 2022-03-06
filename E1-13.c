@@ -9,8 +9,14 @@ int main(){
     //assigning all array values with 0
     for (wl = 0;c!= EOF;c=getchar()){
         if (c == '\n' || c == ' ' || c =='\t'){
-            ++values[wl-1];
-            wl = 0;}
+            if (wl>=10){
+                ++values[9];
+                wl = 0;
+            }
+            else{
+                ++values[wl-1];
+                wl = 0;}
+        }
         else
             ++wl;
     }
