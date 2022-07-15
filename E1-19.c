@@ -6,7 +6,7 @@ int main(){
     char input[MAX];
     char output[MAX];
     int len;
-    while((len=lineget(input, MAX))>0){
+    while((len=lineget(input, MAX))>1){
         reverse(len-2,input,output);
         printf("%s",output);
     }
@@ -15,7 +15,7 @@ int main(){
 
 int lineget(char s[], int limit){
     int c, i;
-    for (i=0; i<limit && (c=getchar())!=EOF && c!='\n';++i){
+    for (i=0; i<limit-1 && (c=getchar())!=EOF && c!='\n';++i){
         if (c!='\n')
             s[i]=c;
     }
