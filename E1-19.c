@@ -7,7 +7,7 @@ int main(){
     char output[MAX];
     int len;
     while((len=lineget(input, MAX))>0){
-        reverse(len,input,output);
+        reverse(len-2,input,output);
         printf("%s",output);
     }
     return 0;
@@ -24,7 +24,7 @@ int lineget(char s[], int limit){
         ++i;
     }
     s[i]='\0';
-    return i-2;
+    return i;
 }
 void reverse(int i, char s[], char t[]){
     int c;
